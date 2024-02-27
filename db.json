@@ -1,0 +1,18 @@
+{
+    "Design": [
+        {
+            "id": "1",
+            "title": "DESIGN",
+            "description": "CREATIVE TEMPLATE",
+            "imgsrc": "./design1.png"
+        }
+    ],
+    "Branding": [
+        {
+            "id": "1",
+            "title": "BRANDING",
+            "description": "AMAZING STARTUP",
+            "imgsrc": "./branding1.png"
+        }
+    ]
+}
