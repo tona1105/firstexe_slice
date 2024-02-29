@@ -80,7 +80,7 @@ function handlePlayVideo() {
 }
 
 //HANDLE DATA FROM JSON
-fetch('http://127.0.0.1:5500/firstexe_slice/assets/js/db.json')
+fetch('db.json')
     .then(
         function (response) {
             if (response.status !== 200) {
