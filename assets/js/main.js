@@ -7,7 +7,7 @@ var category3 = $('#3')
 var category4 = $('#4')
 var category5 = $('#5')
 var idClicked = 1
-var arr = []
+var arrData
 var slideSum = ($('.introduce').length).toString()
 $('.total-page').html(slideSum)
 var currentPage = 0
@@ -34,6 +34,8 @@ function handleNavBarActive(element) {
 handleNavBarActive(category1)
 
 //Filter project by category in pc responsive
+//Hard code, can be replace by e.target.id - i think so
+
 category1.click(function () {
     handleNavBarActive(category1);
     removeClass(1)
@@ -89,8 +91,10 @@ fetch('db.json')
             }
             // parse response data
             response.json().then(data => {
+                var arr = []
                 arr.push(data);
                 console.log(arr[0]);
+                handleGetData(arr[0])
                 innerShowProject(2)
             })
         }
@@ -99,58 +103,70 @@ fetch('db.json')
         console.log('Error :-S', err)
     });
 
+function handleGetData(data) {
+    arrData = data
+}
 
-$('.project__button').click(function () {
+// Handle Show More
+$('.project__button').click(handleShowMore)
+
+function handleShowMore() {
+    var all = arrData.length
     $('#project__json').html('')
-    innerShowProject(4)
+    innerShowProject(all)
     $('.project__button').css('display', 'none')
-})
+}
 
+// Handle show project
 function innerShowProject(id) {
     // Clear project current
     $('#project__json').html('')
     // Add project to show
     for (let i = 1; i <= id; i++) {
-        for (let j = 0; j < arr[0][i].length; j++) {
+        for (let j = 0; j < arrData[i].length; j++) {
             $('#project__json').append(
-                `<div class="project__content" style="background-color:${arr[0][i][j].bgcolor};
-                color:${arr[0][i][j].color}; animation: show 1s;">
+                `<div class="project__content" style="background-color:${arrData[i][j].bgcolor};
+                color:${arrData[i][j].color}; animation: show 1s;">
                     <div class="project__content--left">
                         <div class="project__content__category">
-                            ${arr[0][i][j].title}
+                            ${arrData[i][j].title}
                         </div>
                         <div class="project__content__des">
-                            ${arr[0][i][j].description}
+                            ${arrData[i][j].description}
                         </div>
                     </div>
                     <div class="project__content__img">
-                        <img src="${arr[0][i][j].imgsrc}" alt="">
+                        <img src="${arrData[i][j].imgsrc}" alt="">
                     </div>
-                </div>`)}}
+                </div>`)
+        }
+    }
 }
 
+// Handle filter project
 function innerFilterProject(id) {
     // Remove "Show more" button
     $('.project__button').css('display', 'none')
     // Clear project current
     $('#project__json').html('')
     // Add project to show
-    for (let j = 0; j < arr[0][id].length; j++) {
+    for (let j = 0; j < arrData[id].length; j++) {
         $('#project__json').append(
-            `<div class="project__content" style="background-color:${arr[0][id][j].bgcolor};
-            color:${arr[0][id][j].color};animation: show 1s;">
+            `<div class="project__content" style="background-color:${arrData[id][j].bgcolor};
+            color:${arrData[id][j].color};animation: show 1s;">
                 <div class="project__content--left">
                     <div class="project__content__category">
-                        ${arr[0][id][j].title}
+                        ${arrData[id][j].title}
                     </div>
                     <div class="project__content__des">
-                        ${arr[0][id][j].description}
+                        ${arrData[id][j].description}
                     </div>
                 </div>
                 <div class="project__content__img">
-                    <img src="${arr[0][id][j].imgsrc}" alt="">
+                    <img src="${arrData[id][j].imgsrc}" alt="">
                 </div>
-            </div>`)}
+            </div>`)
+    }
 }
 
 
@@ -197,6 +213,7 @@ $('#owl-carousel2').owlCarousel({
     autoWidth: true
 })
 
+// Control slider header
 // Go to next item   
 $('.customNextBtn1').click(function () {
     $('#owl-carousel1').trigger('next.owl.carousel');
@@ -216,6 +233,8 @@ $('.customPrevBtn1').click(function () {
     }
 })
 
+
+// Control slider cilent
 $('.customNextBtn2').click(function () {
     $('#owl-carousel2').trigger('next.owl.carousel');
 })
@@ -242,6 +261,7 @@ function toggleDisabledClass(id) {
     }
 }
 
+
 let mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -257,6 +277,6 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0;
 }
