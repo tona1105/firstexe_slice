@@ -156,47 +156,47 @@ function innerFilterProject(id) {
 
 // SLIDER
 //Slider header
-// $('#owl-carousel1').owlCarousel({
-//     items: 1,
-//     loop: true,
-//     margin: 0,
-//     autoplay: true,
-//     autoplayTimeout: 5000,
-//     dots: false
+$('#owl-carousel1').owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 0,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    dots: false
 
-// })
-//  //Slider feature
-// $('#owl-carousel3').owlCarousel({
-//     loop: true,
-//     margin: 30,
-//     autoplay: false,
-//     autoplayTimeout: 5000,
-//     dots: true,
-//     responsiveClass:true,
-//     responsive:{
-//         0: {
-//             items: 1,
-//             autoWidth: true,
-//             margin: 30,
-//             center: true,
+})
+ //Slider feature
+$('#owl-carousel3').owlCarousel({
+    loop: true,
+    margin: 30,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    dots: true,
+    responsiveClass:true,
+    responsive:{
+        0: {
+            items: 1,
+            autoWidth: true,
+            margin: 30,
+            center: true,
             
-//         },
-//         900: {
-//             items: 2,
-//             autoWidth: false,
-//         }
-//     }
-// }) 
+        },
+        900: {
+            items: 2,
+            autoWidth: false,
+        }
+    }
+}) 
 
-// //Slider client
-// $('#owl-carousel2').owlCarousel({
-//     items: 1,
-//     margin: 30,
-//     loop: true,
-//     autoplay: false,
-//     dots: false,
-//     autoWidth: true
-// })
+//Slider client
+$('#owl-carousel2').owlCarousel({
+    items: 1,
+    margin: 30,
+    loop: true,
+    autoplay: false,
+    dots: false,
+    autoWidth: true
+})
 
 // Go to next item   
 $('.customNextBtn2').click(function () {
