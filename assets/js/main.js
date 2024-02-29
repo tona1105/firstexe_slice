@@ -156,47 +156,47 @@ function innerFilterProject(id) {
 
 // SLIDER
 //Slider header
-$('#owl-carousel1').owlCarousel({
-    items: 1,
-    loop: true,
-    margin: 0,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    dots: false
+// $('#owl-carousel1').owlCarousel({
+//     items: 1,
+//     loop: true,
+//     margin: 0,
+//     autoplay: true,
+//     autoplayTimeout: 5000,
+//     dots: false
 
-})
- //Slider feature
-$('#owl-carousel3').owlCarousel({
-    loop: true,
-    margin: 30,
-    autoplay: false,
-    autoplayTimeout: 5000,
-    dots: true,
-    responsiveClass:true,
-    responsive:{
-        0: {
-            items: 1,
-            autoWidth: true,
-            margin: 30,
-            center: true,
+// })
+//  //Slider feature
+// $('#owl-carousel3').owlCarousel({
+//     loop: true,
+//     margin: 30,
+//     autoplay: false,
+//     autoplayTimeout: 5000,
+//     dots: true,
+//     responsiveClass:true,
+//     responsive:{
+//         0: {
+//             items: 1,
+//             autoWidth: true,
+//             margin: 30,
+//             center: true,
             
-        },
-        900: {
-            items: 2,
-            autoWidth: false,
-        }
-    }
-}) 
+//         },
+//         900: {
+//             items: 2,
+//             autoWidth: false,
+//         }
+//     }
+// }) 
 
-//Slider client
-$('#owl-carousel2').owlCarousel({
-    items: 1,
-    margin: 30,
-    loop: true,
-    autoplay: false,
-    dots: false,
-    autoWidth: true
-})
+// //Slider client
+// $('#owl-carousel2').owlCarousel({
+//     items: 1,
+//     margin: 30,
+//     loop: true,
+//     autoplay: false,
+//     dots: false,
+//     autoWidth: true
+// })
 
 // Go to next item   
 $('.customNextBtn2').click(function () {
@@ -241,4 +241,23 @@ function toggleDisabledClass(id) {
     else {
         $('.customPrevBtn').removeClass('disabled')
     }
+}
+
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }

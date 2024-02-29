@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <div onclick="topFunction()" id="myBtn" title="Go to top">
+        <img src="./assets/img/icons8-scroll-up-50.png" alt="">
+    </div>
     <!-- Header and intro -->
     <header class="bg--black">
         <nav class="container">
@@ -19,10 +22,10 @@
                 <div class="nav__title">
                     AGENCY
                 </div>
-                <div class="nav__menu" >
+                <div class="nav__menu">
                     <span>About</span>
-                    <span>Portfolio</span>
-                    <span>Contact</span>
+                    <a href="#portfolio"><span>Portfolio</span></a>
+                    <a href="#contact"> <span>Contact</span></a>
                     <span class="menu__icon">
                         <img src="./assets/img/menu.png" alt="">
                     </span>
@@ -33,10 +36,10 @@
                     </span>
                     <div class="menu__list">
                         <span>About</span>
-                        <span>Portfolio</span>
-                        <span>Contact</span>
+                        <a href="#portfolio"><span>Portfolio</span></a>
+                        <a href="#contact"> <span>Contact</span></a>
                     </div>
-    
+
                 </div>
             </div>
         </nav>
@@ -281,7 +284,7 @@
     </section>
     <!-- Project -->
     <section class="bg--white">
-        <div class="container">
+        <div class="container" id="portfolio">
             <div class="project">
                 <div class="project__header">
                     <div class="project__title">
@@ -475,7 +478,7 @@
     </section>
     <!-- Footer -->
     <footer class="bg--black">
-        <div class="container">
+        <div class="container" id="contact">
             <div class="footer__header">
                 <div class="footer__title">
                     NEWS LETTER SIGN UP
