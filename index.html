@@ -14,17 +14,30 @@
 <body>
     <!-- Header and intro -->
     <header class="bg--black">
-        <nav class="nav container">
-            <div class="nav__title">
-                AGENCY
-            </div>
-            <div class="nav__menu">
-                <span>About</span>
-                <span>Portfolio</span>
-                <span>Contact</span>
-                <span class="menu__icon">
-                    <img src="./assets/img/menu.png" alt="">
-                </span>
+        <nav class="container">
+            <div class="nav">
+                <div class="nav__title">
+                    AGENCY
+                </div>
+                <div class="nav__menu" >
+                    <span>About</span>
+                    <span>Portfolio</span>
+                    <span>Contact</span>
+                    <span class="menu__icon">
+                        <img src="./assets/img/menu.png" alt="">
+                    </span>
+                </div>
+                <div class="nav__menu--mobile">
+                    <span class="menu__icon">
+                        <img src="./assets/img/menu.png" alt="">
+                    </span>
+                    <div class="menu__list">
+                        <span>About</span>
+                        <span>Portfolio</span>
+                        <span>Contact</span>
+                    </div>
+    
+                </div>
             </div>
         </nav>
         <div id="owl-carousel1" class="intro container owl-carousel owl-theme ">
@@ -76,7 +89,7 @@
     <!-- Advantage -->
     <section class="bg--white">
         <div class="container">
-            <div class="page-direction ">
+            <div class="page-direction1 ">
                 <div class="img-direction customPrevBtn ">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="48" height="48" rx="24" fill="#FF564F" />
@@ -381,6 +394,16 @@
                             <li id="5" data-att="5" class="navbar__item">Products</li>
                         </ul>
                     </div>
+                    <div class="project__select">
+                        <p>PORTFLOLIO</p>
+                        <select id="select" name="" id="">
+                            <option value="0">All</option>
+                            <option value="1">Design</option>
+                            <option value="2">Development</option>
+                            <option value="3">Branding</option>
+                            <option value="4">Products</option>
+                        </select>
+                    </div>
                     <div>
                         <div id="project__json" class=""></div>
                         <div class="project__button">
@@ -409,9 +432,9 @@
                 </div>
             </div>
         </div>
-        <div class="bg--white " style="height: 100px;">
-            <div class="client container">
-                <div class="page-direction">
+        <div class="bg--white client2" style="height: 200px;">
+            <div class="container">
+                <div class="page-direction2">
                     <div class="img-direction ">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="48" height="48" rx="24" fill="#FF564F" />
@@ -543,7 +566,7 @@
         <div class="container">
             <div class="footer__header">
                 <div class="footer__title">
-                    NEWSLETTER SIGN UP
+                    NEWS LETTER SIGN UP
                 </div>
                 <div class="footer__form">
                     <form action="">

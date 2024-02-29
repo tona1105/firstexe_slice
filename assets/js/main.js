@@ -8,9 +8,25 @@ var category3 = $('#3')
 var category4 = $('#4')
 var category5 = $('#5')
 var idClicked = 1
+var arr = []
 var slideSum = ($('.introduce').length).toString()
 $('.total-page').html(slideSum)
 var currentPage = 0
+
+
+
+// Filter project by category in mobile responsive
+document.getElementById("select").addEventListener('change', (event) => {
+    console.log(event.target.value)
+    if(event.target.value > 0) {
+        innerFilterProject(event.target.value)
+    }
+    else {
+        innerShowProject(2)
+        $('.project__button').css('display', 'block')
+    }
+  });
+
 
 // AddNavBarActive
 function handleNavBarActive(element) {
@@ -18,6 +34,7 @@ function handleNavBarActive(element) {
 }
 handleNavBarActive(category1)
 
+//Filter project by category in pc responsive
 category1.click(function () {
     handleNavBarActive(category1);
     removeClass(1)
@@ -82,7 +99,7 @@ fetch('http://127.0.0.1:5500/firstexe_slice/assets/js/db.json')
     .catch(err => {
         console.log('Error :-S', err)
     });
-var arr = []
+
 
 $('.project__button').click(function () {
     $('#project__json').html('')
@@ -96,7 +113,7 @@ function innerShowProject(id) {
         for (let j = 0; j < arr[0][i].length; j++) {
             console.log(arr[0][i][j]);
             $('#project__json').append(
-                `<div class="project__content" style="background-color:${arr[0][i][j].bgcolor}">
+                `<div class="project__content" style="background-color:${arr[0][i][j].bgcolor};color:${arr[0][i][j].color}">
         <div class="project__content--left">
             <div class="project__content__category">
                 ${arr[0][i][j].title}
@@ -119,7 +136,7 @@ function innerFilterProject(id) {
     $('#project__json').html('')
     for (let j = 0; j < arr[0][id].length; j++) {
         $('#project__json').append(
-            `<div class="project__content" style="background-color:${arr[0][id][j].bgcolor}">
+            `<div class="project__content" style="background-color:${arr[0][id][j].bgcolor};color:${arr[0][id][j].color}">
     <div class="project__content--left">
         <div class="project__content__category">
             ${arr[0][id][j].title}
@@ -136,50 +153,44 @@ function innerFilterProject(id) {
 
 
 // SLIDER
-$(document).ready(function () {
-     //Feature client
+     //Feature feature
     $('#owl-carousel3').owlCarousel({
-    
         loop: true,
-        margin: 0,
-        autoplay: false,
+        margin: 30,
+        autoplay: true,
         autoplayTimeout: 5000,
-        
         dots: true,
-        responsiveClass:true,
         responsive:{
             0: {
                 items: 1,
                 autoWidth: true,
-                
+                margin: 0
             },
-            376:{
-                items:2,
-                margin: 30,
-                nav:false,
-                
-            },
-
+            400: {
+                items: 2,
+                autoWidth: false,
+            }
+            
         }
     }) 
-    //  //Slider client
-
-    // $('#owl-carousel2').owlCarousel({
-    //     items: 1,
-    //     margin: 30,
-    //     loop: true,
-    //     autoplay: false,
-    //     dots: true
-    // })
-    //  // Slider header
-    // $('#owl-carousel1').owlCarousel({
-    //     items: 1,
-    //     loop: true,
-    //     margin: 0,
-    //     autoplay: false,
-    //     autoplayTimeout: 5000,
-    //     dots: false
-    // }) 
+     //Slider client
+    $('#owl-carousel2').owlCarousel({
+        items: 1,
+        margin: 30,
+        loop: true,
+        autoplay: false,
+        dots: false,
+        autoWidth: true
+    })
+    //Slider header
+    $('#owl-carousel1').owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        dots: false
+    }) 
      // Go to next item   
     $('.customNextBtn').click(function () {
     $('#owl-carousel1').trigger('next.owl.carousel');
@@ -196,7 +207,7 @@ $(document).ready(function () {
         $(".current-page").html($(".owl-item.active .item").attr("attr-id"));
         currentPage = $(".owl-item.active .item").attr("attr-id")
     }})
-})
+
 
     // Toggle Disabled Class - use when slider does not have loop: true property
     function toggleDisabledClass(id) {

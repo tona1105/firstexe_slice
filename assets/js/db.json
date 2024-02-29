@@ -4,7 +4,8 @@
             "title": "DESIGN",
             "description": "CREATIVE TEMPLATE",
             "imgsrc": "./assets/img/design.png",
-            "bgcolor": "#F8E71C"
+            "bgcolor": "#F8E71C",
+            "color": "var(--black)"
         }
     ],
     "2": [
@@ -12,8 +13,9 @@
             "title": "BRANDING",
             "description": "AMAZING STARTUP",
             "imgsrc": "./assets/img/branding.png",
-            "bgcolor": "#FF564F"
-        }
+            "bgcolor": "#FF564F",
+            "color": "var(--white)"
+        }   
     ],
     "3": 
     [
@@ -21,13 +23,17 @@
             "title": "DEVELOPMENT",
             "description": "GOOD QUALITY",
             "imgsrc": "./assets/img/design.png",
-            "bgcolor": "#F8E71C"
+            "bgcolor": "#F8E71C",
+            "color": "var(--black)"
+
         },
         {
             "title": "123DEVELOPMENT",
             "description": "GOOD QUALITY",
             "imgsrc": "./assets/img/design.png",
-            "bgcolor": "#F8E71C"
+            "bgcolor": "#F8E71C",
+            "color": "var(--black)"
+
         }
     ],
     "4": 
@@ -36,13 +42,15 @@
             "title": "PRODUCTS",
             "description": "FANTASTIC PRODUCTS",
             "imgsrc": "./assets/img/branding.png",
-            "bgcolor": "#FF564F"
+            "bgcolor": "#FF564F",
+            "color": "var(--white)"
         },
         {
             "title": "312PRODUCTS",
             "description": "FANTASTIC PRODUCTS",
             "imgsrc": "./assets/img/branding.png",
-            "bgcolor": "#FF564F"
+            "bgcolor": "#FF564F",
+            "color": "var(--white)"
         }
     ]
 }
