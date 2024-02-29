@@ -112,7 +112,8 @@ function innerShowProject(id) {
         for (let j = 0; j < arr[0][i].length; j++) {
             console.log(arr[0][i][j]);
             $('#project__json').append(
-                `<div class="project__content" style="background-color:${arr[0][i][j].bgcolor};color:${arr[0][i][j].color}">
+                `<div class="project__content" style="background-color:${arr[0][i][j].bgcolor};
+                color:${arr[0][i][j].color}; animation: show 1s;">
         <div class="project__content--left">
             <div class="project__content__category">
                 ${arr[0][i][j].title}
@@ -135,7 +136,8 @@ function innerFilterProject(id) {
     $('#project__json').html('')
     for (let j = 0; j < arr[0][id].length; j++) {
         $('#project__json').append(
-            `<div class="project__content" style="background-color:${arr[0][id][j].bgcolor};color:${arr[0][id][j].color}">
+            `<div class="project__content" style="background-color:${arr[0][id][j].bgcolor};
+            color:${arr[0][id][j].color};animation: show 1s;">
     <div class="project__content--left">
         <div class="project__content__category">
             ${arr[0][id][j].title}
@@ -186,15 +188,15 @@ $('#owl-carousel3').owlCarousel({
     }
 }) 
 
-// //Slider client
-// $('#owl-carousel2').owlCarousel({
-//     items: 1,
-//     margin: 30,
-//     loop: true,
-//     autoplay: false,
-//     dots: false,
-//     autoWidth: true
-// })
+//Slider client
+$('#owl-carousel2').owlCarousel({
+    items: 1,
+    margin: 30,
+    loop: true,
+    autoplay: false,
+    dots: false,
+    autoWidth: true
+})
 
 // Go to next item   
 $('.customNextBtn2').click(function () {
