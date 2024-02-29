@@ -8,15 +8,6 @@
             "color": "var(--black)"
         }
     ],
-    "2": [
-        {
-            "title": "BRANDING",
-            "description": "AMAZING STARTUP",
-            "imgsrc": "./assets/img/branding.png",
-            "bgcolor": "#FF564F",
-            "color": "var(--white)"
-        }   
-    ],
     "3": 
     [
         {
@@ -36,6 +27,16 @@
 
         }
     ],
+    "2": [
+        {
+            "title": "BRANDING",
+            "description": "AMAZING STARTUP",
+            "imgsrc": "./assets/img/branding.png",
+            "bgcolor": "#FF564F",
+            "color": "var(--white)"
+        }   
+    ],
+    
     "4": 
     [
         {

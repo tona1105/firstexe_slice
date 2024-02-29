@@ -107,50 +107,50 @@ $('.project__button').click(function () {
 })
 
 function innerShowProject(id) {
+    // Clear project current
     $('#project__json').html('')
+    // Add project to show
     for (let i = 1; i <= id; i++) {
         for (let j = 0; j < arr[0][i].length; j++) {
-            console.log(arr[0][i][j]);
             $('#project__json').append(
                 `<div class="project__content" style="background-color:${arr[0][i][j].bgcolor};
                 color:${arr[0][i][j].color}; animation: show 1s;">
-        <div class="project__content--left">
-            <div class="project__content__category">
-                ${arr[0][i][j].title}
-            </div>
-            <div class="project__content__des">
-                ${arr[0][i][j].description}
-            </div>
-        </div>
-        <div class="project__content__img">
-            <img src="${arr[0][i][j].imgsrc}" alt="">
-        </div>
-    </div>
-    `)
-        }
-    }
+                    <div class="project__content--left">
+                        <div class="project__content__category">
+                            ${arr[0][i][j].title}
+                        </div>
+                        <div class="project__content__des">
+                            ${arr[0][i][j].description}
+                        </div>
+                    </div>
+                    <div class="project__content__img">
+                        <img src="${arr[0][i][j].imgsrc}" alt="">
+                    </div>
+                </div>`)}}
 }
 
 function innerFilterProject(id) {
+    // Remove "Show more" button
     $('.project__button').css('display', 'none')
+    // Clear project current
     $('#project__json').html('')
+    // Add project to show
     for (let j = 0; j < arr[0][id].length; j++) {
         $('#project__json').append(
             `<div class="project__content" style="background-color:${arr[0][id][j].bgcolor};
             color:${arr[0][id][j].color};animation: show 1s;">
-    <div class="project__content--left">
-        <div class="project__content__category">
-            ${arr[0][id][j].title}
-        </div>
-        <div class="project__content__des">
-            ${arr[0][id][j].description}
-        </div>
-    </div>
-    <div class="project__content__img">
-        <img src="${arr[0][id][j].imgsrc}" alt="">
-    </div>
-</div>`)
-    }
+                <div class="project__content--left">
+                    <div class="project__content__category">
+                        ${arr[0][id][j].title}
+                    </div>
+                    <div class="project__content__des">
+                        ${arr[0][id][j].description}
+                    </div>
+                </div>
+                <div class="project__content__img">
+                    <img src="${arr[0][id][j].imgsrc}" alt="">
+                </div>
+            </div>`)}
 }
 
 
@@ -163,31 +163,30 @@ $('#owl-carousel1').owlCarousel({
     autoplay: false,
     autoplayTimeout: 5000,
     dots: false
-
 })
- //Slider feature
+//Slider feature
 $('#owl-carousel3').owlCarousel({
     loop: true,
     margin: 30,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 5000,
     dots: true,
-    responsiveClass:true,
-    responsive:{
+    responsiveClass: true,
+    responsive: {
         0: {
             items: 1,
             autoWidth: true,
             margin: 30,
             center: true,
-            
+
         },
         900: {
             items: 2,
+            dotsEach: 1,
             autoWidth: false,
         }
     }
-}) 
-
+})
 //Slider client
 $('#owl-carousel2').owlCarousel({
     items: 1,
@@ -199,7 +198,7 @@ $('#owl-carousel2').owlCarousel({
 })
 
 // Go to next item   
-$('.customNextBtn2').click(function () {
+$('.customNextBtn1').click(function () {
     $('#owl-carousel1').trigger('next.owl.carousel');
     $('#owl-carousel1').trigger('stop.owl.autoplay');
     if ($(".owl-item").hasClass("active")) {
@@ -246,18 +245,18 @@ function toggleDisabledClass(id) {
 let mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
