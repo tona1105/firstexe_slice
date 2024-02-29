@@ -158,7 +158,7 @@ function innerFilterProject(id) {
 //Slider header
 $('#owl-carousel1').owlCarousel({
     items: 1,
-    loop: true,
+    loop: false,
     margin: 0,
     autoplay: false,
     autoplayTimeout: 5000,

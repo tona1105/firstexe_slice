@@ -8,6 +8,10 @@
     --pink: #FF564F;
 }
 
+main {
+    overflow: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -1159,7 +1163,10 @@ input[type="email"] {
     background-color: #9013FE !important;
 }
 
-@media screen and (max-width: 375px) {
+@media (max-width: 375px) {
+    html {
+        overflow-x: hidden;
+    }
     .container {
         max-width: 375px;
         width: 100%;
@@ -1605,6 +1612,6 @@ input[type="email"] {
     }
     #myBtn {
         bottom: 30px;
-        right: 105px;
+        right: 10%
     }
 }
