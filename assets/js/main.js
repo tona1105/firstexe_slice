@@ -1,4 +1,3 @@
-
 var playVideo = $('.advantage__img');
 var toggle = $('.advantage__img--girl')
 var videoYoutube = $('.advantage__youtube')
@@ -18,14 +17,14 @@ var currentPage = 0
 // Filter project by category in mobile responsive
 document.getElementById("select").addEventListener('change', (event) => {
     console.log(event.target.value)
-    if(event.target.value > 0) {
+    if (event.target.value > 0) {
         innerFilterProject(event.target.value)
     }
     else {
         innerShowProject(2)
         $('.project__button').css('display', 'block')
     }
-  });
+});
 
 
 // AddNavBarActive
@@ -149,79 +148,95 @@ function innerFilterProject(id) {
         <img src="${arr[0][id][j].imgsrc}" alt="">
     </div>
 </div>`)
-}}
+    }
+}
 
 
 // SLIDER
-     //Feature feature
-    $('#owl-carousel3').owlCarousel({
-        loop: true,
-        margin: 30,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        dots: true,
-        responsive:{
-            0: {
-                items: 1,
-                autoWidth: true,
-                margin: 0
-            },
-            400: {
-                items: 2,
-                autoWidth: false,
-            }
+//Slider header
+$('#owl-carousel1').owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 0,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    dots: false
+
+})
+ //Slider feature
+$('#owl-carousel3').owlCarousel({
+    loop: true,
+    margin: 30,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    dots: true,
+    responsiveClass:true,
+    responsive:{
+        0: {
+            items: 1,
+            autoWidth: true,
+            margin: 30,
+            center: true,
             
+        },
+        900: {
+            items: 2,
+            autoWidth: false,
         }
-    }) 
-     //Slider client
-    $('#owl-carousel2').owlCarousel({
-        items: 1,
-        margin: 30,
-        loop: true,
-        autoplay: false,
-        dots: false,
-        autoWidth: true
-    })
-    //Slider header
-    $('#owl-carousel1').owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 0,
-        autoplay: false,
-        autoplayTimeout: 5000,
-        dots: false
-    }) 
-     // Go to next item   
-    $('.customNextBtn').click(function () {
+    }
+}) 
+
+// //Slider client
+// $('#owl-carousel2').owlCarousel({
+//     items: 1,
+//     margin: 30,
+//     loop: true,
+//     autoplay: false,
+//     dots: false,
+//     autoWidth: true
+// })
+
+// Go to next item   
+$('.customNextBtn2').click(function () {
     $('#owl-carousel1').trigger('next.owl.carousel');
     $('#owl-carousel1').trigger('stop.owl.autoplay');
     if ($(".owl-item").hasClass("active")) {
         $(".current-page").html($(".owl-item.active .item").attr("attr-id"));
         currentPage = $(".owl-item.active .item").attr("attr-id")
-    }})
-    // Go to the previous item
-    $('.customPrevBtn').click(function () {
+    }
+})
+// Go to the previous item
+$('.customPrevBtn1').click(function () {
     $('#owl-carousel1').trigger('prev.owl.carousel');
     $('#owl-carousel1').trigger('stop.owl.autoplay');
     if ($(".owl-item").hasClass("active")) {
         $(".current-page").html($(".owl-item.active .item").attr("attr-id"));
         currentPage = $(".owl-item.active .item").attr("attr-id")
-    }})
-
-
-    // Toggle Disabled Class - use when slider does not have loop: true property
-    function toggleDisabledClass(id) {
-        if (id === '1') {
-            console.log(true);
-            $('.customPrevBtn').addClass('disabled')
-            $('.customNextBtn').removeClass('disabled')
-
-        }
-        else if (id === slideSum) {
-            $('.customNextBtn').addClass('disabled')
-            $('.customPrevBtn').removeClass('disabled')
-        }
-        else {
-            $('.customPrevBtn').removeClass('disabled')
-        }
     }
+})
+
+$('.customNextBtn2').click(function () {
+    $('#owl-carousel2').trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('.customPrevBtn2').click(function () {
+    $('#owl-carousel2').trigger('prev.owl.carousel');
+})
+
+
+// Toggle Disabled Class - use when slider does not have loop: true property
+function toggleDisabledClass(id) {
+    if (id === '1') {
+        console.log(true);
+        $('.customPrevBtn').addClass('disabled')
+        $('.customNextBtn').removeClass('disabled')
+
+    }
+    else if (id === slideSum) {
+        $('.customNextBtn').addClass('disabled')
+        $('.customPrevBtn').removeClass('disabled')
+    }
+    else {
+        $('.customPrevBtn').removeClass('disabled')
+    }
+}
