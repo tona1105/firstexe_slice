@@ -197,7 +197,6 @@ $('#owl-carousel3').owlCarousel({
     loop: true,
     margin: 30,
     autoplay: true,
-    autoplayTimeout: 5000,
     dots: true,
     responsiveClass: true,
     responsive: {
@@ -292,3 +291,4 @@ function topFunction() {
     document.body.scrollTop = 0; 
     document.documentElement.scrollTop = 0;
 }
+
