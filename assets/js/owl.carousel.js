@@ -806,7 +806,7 @@
 				return;
 			}
 
-			event.preventDefault();
+		
 
 			this.enter('dragging');
 			this.trigger('drag');
@@ -830,7 +830,6 @@
 			return;
 		}
 
-		event.preventDefault();
 
 		if (this.settings.loop) {
 			minimum = this.coordinates(this.minimum());
