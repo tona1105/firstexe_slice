@@ -11,7 +11,7 @@ var arrData
 var currentCategory = 0
 var slideSum = ($('.introduce').length).toString()
 $('.total-page').html(slideSum)
-var currentPage = 0
+var currentPage = 1
 
 
 
@@ -117,7 +117,7 @@ function handleGetData(data) {
 $('.project__button').click(handleShowMore)
 
 function handleShowMore() {
-    if(currentCategory === 0) {
+    if(currentCategory === 1) {
         var all = arrData
         $('#project__json').html('')
         innerShowProject(4)

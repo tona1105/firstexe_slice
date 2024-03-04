@@ -7,11 +7,6 @@
     --black: #111111;
     --pink: #FF564F;
 }
-
-main {
-    overflow: hidden;
-}
-
 html {
     scroll-behavior: smooth;
 }
