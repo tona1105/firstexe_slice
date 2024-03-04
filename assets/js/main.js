@@ -111,9 +111,9 @@ function handleGetData(data) {
 $('.project__button').click(handleShowMore)
 
 function handleShowMore() {
-    var all = arrData.length
+    var all = arrData
     $('#project__json').html('')
-    innerShowProject(all)
+    innerShowProject(4)
     $('.project__button').css('display', 'none')
 }
 
