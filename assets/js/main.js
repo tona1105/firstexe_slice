@@ -8,6 +8,7 @@ var category4 = $('#4')
 var category5 = $('#5')
 var idClicked = 1
 var arrData
+var currentCategory = 0
 var slideSum = ($('.introduce').length).toString()
 $('.total-page').html(slideSum)
 var currentPage = 0
@@ -41,26 +42,31 @@ category1.click(function () {
     removeClass(1)
     innerShowProject(2)
     $('.project__button').css('display', 'block')
+    currentCategory = 1
 })
 category2.click(function () {
     handleNavBarActive(category2);
     removeClass(2)
     innerFilterProject(1)
+    currentCategory = 2
 });
 category3.click(function () {
     handleNavBarActive(category3);
     removeClass(3)
     innerFilterProject(2)
+    currentCategory = 3
 });
 category4.click(function () {
     handleNavBarActive(category4);
     removeClass(4)
     innerFilterProject(3)
+    currentCategory = 4
 });
 category5.click(function () {
     handleNavBarActive(category5);
     removeClass(5)
     innerFilterProject(4)
+    currentCategory = 5
 
 });
 function removeClass(id) {
@@ -111,10 +117,16 @@ function handleGetData(data) {
 $('.project__button').click(handleShowMore)
 
 function handleShowMore() {
-    var all = arrData
-    $('#project__json').html('')
-    innerShowProject(4)
-    $('.project__button').css('display', 'none')
+    if(currentCategory === 0) {
+        var all = arrData
+        $('#project__json').html('')
+        innerShowProject(4)
+        $('.project__button').css('display', 'none')
+    }
+    // need update
+    else {
+        $('.project__button').css('display', 'none')
+    }
 }
 
 // Handle show project
@@ -145,8 +157,8 @@ function innerShowProject(id) {
 
 // Handle filter project
 function innerFilterProject(id) {
-    // Remove "Show more" button
-    $('.project__button').css('display', 'none')
+    
+    
     // Clear project current
     $('#project__json').html('')
     // Add project to show
