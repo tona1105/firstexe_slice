@@ -1,10 +1,10 @@
 
-@media (max-width: 375px) {
+@media (max-width: 779px) {
     html {
         overflow-x: hidden;
     }
     .container {
-        max-width: 375px;
+       
         width: 100%;
         padding: 0 23px;
     }
@@ -90,6 +90,7 @@
         position: absolute;
         top: -112px;
         left: 157px;
+        width: auto;
     }
 
     /* Advantage */
@@ -108,13 +109,12 @@
     }
 
     .advantage__img {
-        width: 454px;
-        height: 340px;
-        left: -50px;
+        width: 100%;
+        height: auto;
     }
 
     .advantage__img--girl {
-        width: 90%;
+        width: 100%;
     }
 
     .advantage__youtube {
@@ -123,8 +123,8 @@
     }
 
     .play--img {
-        top: 76px;
-        left: 110px;
+        top: 30%;
+        left: 30%;
     }
 
     .advantage__content {
@@ -452,3 +452,46 @@
         opacity: 1;
     }
 }
+
+@media (min-width: 780px) and (max-width:1024px) {
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    .advantage__img--girl {
+        height: 90%;
+    }
+    .project__content {
+        margin-left: auto;
+        max-width: 100%;
+    }
+    .project__content__img img {
+        width: 90%;
+        height: 90%;
+        left: 0;
+        height: 105%;
+    }
+    .introduce.item:last-child {
+        width: auto !important;
+    }
+    .introduce__img--main,
+    .introduce__img--main.main2 {
+        width: 50%;
+        left: 50%;
+    }
+    .introduce__img--main img {
+        width: 90% !important;
+    }
+    .client__content {
+        left: 45%;
+    }
+    .blog__body {
+        grid-template-columns: calc(100% / 2) calc(100% / 2);
+        
+    }
+    .blog__content {
+        margin:  0 auto;
+        margin-bottom: 20px;
+    }
+}
+    

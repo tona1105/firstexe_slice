@@ -14,6 +14,22 @@ $('.total-page').html(slideSum)
 var currentPage = 1
 
 
+// Close menu in mobile responsive
+var toogleMenu = false
+$('.menu__icon').click(toggleMenu)
+$('#close-menu').click(toggleMenu)
+
+function toggleMenu() {
+    toogleMenu = !toogleMenu
+    if (toogleMenu) {
+        console.log("true");
+        $('.menu__list').addClass('show') 
+    }
+    else {
+        $('.menu__list').removeClass('show')
+    }
+
+}
 
 // Filter project by category in mobile responsive
 document.getElementById("select").addEventListener('change', (event) => {
@@ -117,7 +133,7 @@ function handleGetData(data) {
 $('.project__button').click(handleShowMore)
 
 function handleShowMore() {
-    if(currentCategory === 1) {
+    if (currentCategory === 1) {
         var all = arrData
         $('#project__json').html('')
         innerShowProject(4)
@@ -157,8 +173,8 @@ function innerShowProject(id) {
 
 // Handle filter project
 function innerFilterProject(id) {
-    
-    
+
+
     // Clear project current
     $('#project__json').html('')
     // Add project to show
@@ -207,10 +223,14 @@ $('#owl-carousel3').owlCarousel({
             center: true,
 
         },
-        900: {
+        780: {
             items: 2,
             dotsEach: 1,
-            autoWidth: false,
+            margin: 30,
+        },
+        1000: {
+            items: 2,
+            dotsEach: 1,
         }
     }
 })
@@ -221,7 +241,10 @@ $('#owl-carousel2').owlCarousel({
     loop: true,
     autoplay: false,
     dots: false,
-    autoWidth: true
+    autoWidth: true,
+    response: {
+
+    }
 })
 
 // Control slider header
@@ -288,7 +311,7 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0; 
+    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
 
