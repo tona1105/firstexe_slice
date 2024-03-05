@@ -33,7 +33,7 @@ a:hover {
     border: none;
     outline: none;
     cursor: pointer;
-    font-style: 18px;
+    font-size: 18px;
     opacity: 0.5;
 }
 
@@ -342,7 +342,7 @@ a:hover {
     width: 50%;
 }
 
-.advantage__title {
+.advantage__title h1 {
     font-family: "Inknut Antiqua", sans-serif;
     font-weight: 900;
     font-size: 56px;
@@ -777,7 +777,7 @@ input[type="email"] {
     padding-top: 9px;
 }
 
-.client__title {
+.client__title h1{
     font-family: Inknut Antiqua;
     font-size: 56px;
     font-weight: 900;
