@@ -132,7 +132,7 @@
         width: 100%;
     }
 
-    .advantage__title {
+    .advantage__title h1 {
         font-size: 40px;
         font-weight: 900;
         line-height: 48px;
@@ -274,7 +274,7 @@
         padding-top: unset;
     }
 
-    .client__title {
+    .client__title h1{
         font-size: 38px;
         font-weight: 900;
         line-height: 48px;
